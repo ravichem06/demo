@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Models</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Owner</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @models.each do |model| %>
+      <tr>
+        <td><%= model.name %></td>
+        <td><%= model.designer %></td>
+        <td><%= link_to 'File', model.file.url %></td>
+        <td><%= link_to 'Show', model %></td>
+        <td><%= link_to 'Edit', edit_model_path(model) %></td>
+        <td><%= link_to 'Destroy', model, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Model', new_model_path %>
+
+
+<iframe src="https://clara.io/embed/9d6fc361-8692-4b71-bcbd-6e3ddd9df980?renderer=vray" width="800" height="600"></iframe>
+
+<iframe src="https://clara.io/embed/9d6fc361-8692-4b71-bcbd-6e3ddd9df980?renderer=webgl" width="800" height="600" allowfullscreen></iframe>

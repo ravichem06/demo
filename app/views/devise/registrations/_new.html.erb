@@ -1,0 +1,49 @@
+<h1>Sign Up</h1>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="top-row">
+
+    <div class="field-wrap">
+      <%= f.label 'First Name' %>
+      <%= f.email_field :first_name %>
+    </div>
+
+    <div class="field-wrap">
+      <%= f.label 'Last Name' %>
+      <%= f.email_field :last_name %>
+    </div>
+    
+  </div>
+
+  <div class="field-wrap">
+    <%= f.label 'Email Address' %>
+    <%= f.email_field :email %>
+  </div>
+
+  <div class="field-wrap">
+    <%= f.label 'Set a Password' %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %>
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <div class="field-wrap" >
+    <%= f.label 'Comfirm your Password' %>
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  
+
+  <div class="actions">
+    <%= f.submit "Sign up" , :class => "button button-block"%>
+  </div>
+<% end %>
+
+
+
+          
+
+          
